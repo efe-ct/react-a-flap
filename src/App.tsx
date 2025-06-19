@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { GameContainer } from './components/GameContainer';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-sate-800 flex flex-col items-center justify-center p-4">
+      <div className="text-center mb-6">
+        <h1 className="text-5xl font-bold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent mb-2">
+          React-A-Flap
+        </h1>
+        <p className="text-white/80 text-lg">
+          A modern homage to classic one-tap platforms
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+      <GameContainer />
+
+      <div className="mt-6 text-center text-white/60 text-sm max-w-md">
+        <p className="mb-2">
+          <span className="font-medium">Desktop;</span> Spacebar to flap, ESC to  pause
+        </p>
+        <p>
+          <span className="font-medium">Mobile;</span> Tap anywhere to flap
+        </p>
+      </div>
+
+      <footer className="mt-8 text-center text-white/40 text-xs">
+        <p>React-A-flap is a fan-made, non-commercial homeage inspired by the classic one-tap playform</p>
+        <p className="mt-1">All code and assets are original . Built with React & TypeScript</p>
+      </footer>
+    </div>
   )
 }
 
-export default App
+export default App;
+
+
+
+
