@@ -2,4 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* Custom CSS classes */
+.test-button {
+  background-color: #3490dc;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+/* Custom CSS to test if the file is loading */
+.test-class {
+  @apply bg-red-500 text-white p-4 rounded;
+}
