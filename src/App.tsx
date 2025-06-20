@@ -10,7 +10,6 @@ function App() {
         <p className="text-white/80 text-lg">
           A modern homage to classic one-tap platforms
         </p>
-        <button className="test-button mt-4">Test Button</button>
       </div>
 
       <GameContainer />
