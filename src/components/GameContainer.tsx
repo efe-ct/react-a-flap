@@ -63,7 +63,7 @@ export const GameContainer: React.FC = () => {
 
   const flap = useCallback(() => {
     if (gameState === 'playing') {
-      setBird(prev => ({
+      setBird((prev: any) => ({
         ...prev,
         velocity: gameConfig.flapStrength,
         rotation: -20,
@@ -98,7 +98,7 @@ export const GameContainer: React.FC = () => {
   }, []);
 
   const updateGame = useCallback((deltaTime: number) => {
-    setBird(prevBird => {
+    setBird((prevBird: { velocity: number; position: { y: number; x: any; }; }) => {
       const newVelocity = prevBird.velocity + gameConfig.gravity * deltaTime;
       const newY = prevBird.position.y + newVelocity * deltaTime;
       const newRotation = Math.max(-90, Math.min(90, newVelocity * 50));
@@ -142,7 +142,7 @@ export const GameContainer: React.FC = () => {
     });
 
     // Check for scoring and collisions
-    setBird(currentBird => {
+    setBird((currentBird: { position: { x: any; y?: number; }; }) => {
       setObstacles(currentObstacles => {
         // Check collisions
         if (checkCollision(currentBird.position, currentObstacles)) {
