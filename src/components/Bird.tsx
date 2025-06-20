@@ -1,5 +1,5 @@
 import React from 'react';
-import { BirdState } from '../types/game';
+import type { BirdState } from '../types/game';
 
 interface BirdProps {
   bird: BirdState;

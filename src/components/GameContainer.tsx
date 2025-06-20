@@ -5,7 +5,7 @@ import { Obstacles } from './Obstacles';
 import { Scoreboard } from './Scoreboard';
 import { Menu } from './Menu';
 import { Background } from './Background';
-import { GameState, BirdState, Obstacle, GameConfig } from '../types/game';
+import type { GameState, BirdState, Obstacle, GameConfig } from '../types/game';
 
 const gameConfig: GameConfig = {
   gravity: 0.0008,
@@ -142,7 +142,7 @@ export const GameContainer: React.FC = () => {
     });
 
     // Check for scoring and collisions
-    setBird((currentBird: { position: { x: any; y?: number; }; }) => {
+    setBird((currentBird: BirdState) => {
       setObstacles(currentObstacles => {
         // Check collisions
         if (checkCollision(currentBird.position, currentObstacles)) {
@@ -165,7 +165,7 @@ export const GameContainer: React.FC = () => {
         return newObstacles;
       });
 
-      return currentBird;
+      return { ...currentBird };
     });
   }, [score, highScore, checkCollision]);
 
